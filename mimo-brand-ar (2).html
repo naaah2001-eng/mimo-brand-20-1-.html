@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIMO | توزيع منتجات التجميل الاحترافية</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap');
+
+    :root {
+      --burgundy: #5C0A1A;
+      --burgundy-dark: #2A050E;
+      --burgundy-mid: #7A1528;
+      --copper: #C9A06C;
+      --copper-light: #E0C9A0;
+      --cream: #F9F4EE;
+      --soft-cream: #F2EBE2;
+      --text: #1A0F12;
+      --muted: #5E4A4E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      direction: rtl;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--burgundy-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(201,160,108,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 80%, rgba(122,21,40,0.3) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    .logo-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.2rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      color: var(--copper);
+      margin-bottom: 8px;
+      direction: ltr;
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--copper-light);
+      opacity: 0.85;
+      margin-bottom: 48px;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--copper);
+      margin: 0 auto 32px;
+      opacity: 0.7;
+    }
+
+    .hero h1 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.85;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: transparent;
+      border: 1px solid var(--copper);
+      color: var(--copper);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background: var(--copper);
+      color: var(--burgundy-dark);
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 80px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--copper);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--burgundy);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 640px;
+    }
+
+    /* ── About ── */
+    .about {
+      background: var(--cream);
+    }
+
+    /* ── Services ── */
+    .services {
+      background: var(--soft-cream);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 32px 28px;
+      border-top: 2px solid var(--copper);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-align: right;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(92,10,26,0.08);
+    }
+
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--copper);
+      margin-bottom: 12px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ── Approach ── */
+    .approach {
+      background: var(--burgundy-dark);
+      color: #fff;
+      max-width: 100%;
+      padding: 80px 24px;
+    }
+
+    .approach-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .approach .section-label {
+      color: var(--copper);
+    }
+
+    .approach .section-title {
+      color: #fff;
+    }
+
+    .approach .section-body {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .approach-list {
+      list-style: none;
+      margin-top: 40px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .approach-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+    }
+
+    .approach-list .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--copper);
+      border-radius: 50%;
+      margin-top: 10px;
+      flex-shrink: 0;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      background: var(--cream);
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+
+    .contact .section-title {
+      margin-bottom: 12px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--burgundy);
+      text-decoration: none;
+      border-bottom: 1px solid var(--copper);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+      direction: ltr;
+    }
+
+    .contact-email:hover {
+      color: var(--copper);
+    }
+
+    .contact-location {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--muted);
+    }
+
+    .contact-location a {
+      color: inherit;
+      text-decoration: none;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--burgundy-dark);
+      text-align: center;
+      padding: 28px 24px;
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+    }
+
+    footer span {
+      color: var(--copper);
+      opacity: 0.7;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .logo-mark { font-size: 3rem; letter-spacing: 0.25em; }
+      .hero h1 { font-size: 1.4rem; }
+      .section-title { font-size: 1.55rem; }
+      section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-mark">MIMO</div>
+      <div class="logo-sub">توزيع منتجات التجميل الاحترافية</div>
+      <div class="hero-divider"></div>
+      <h1>نرتقي بمعايير التجميل الاحترافي في المملكة العربية السعودية</h1>
+      <p>
+        تتعاون MIMO مع أبرز العلامات التجارية العالمية لتوفير أنظمة تجميل فاخرة 
+        مدعومة بالتدريب والتعليم لصالونات التجميل، وخبراء العناية بالأظافر، وأكاديميات الجمال.
+      </p>
+      <a href="#contact" class="cta-btn">تواصل معنا</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="section-label">من نحن</div>
+    <h2 class="section-title">علامة تجارية مبنية للمحترفين</h2>
+    <p class="section-body">
+      MIMO شركة سعودية متخصصة في توزيع منتجات التجميل الاحترافية، مقرها الرياض. 
+      نركز على استيراد ودعم العلامات التجارية العالمية عالية الأداء داخل المملكة العربية السعودية، 
+      ونعمل حصرياً مع الصالونات، وخبراء الأظافر، وأكاديميات التجميل، والمختصين المؤهلين 
+      الذين يبحثون عن الجودة والثبات والتدريب المستمر.
+    </p>
+    <p class="section-body" style="margin-top: 18px;">
+      نهجنا قائم على الشراكة الحقيقية. لا نكتفي باستيراد المنتجات، بل نبني العلامات التجارية. 
+      من الامتثال للأنظمة والمخزون المحلي، إلى التدريب الفني وتفعيل السوق، 
+      توفر MIMO البنية التحتية الكاملة التي تحتاجها أي علامة فاخرة للنجاح في السوق السعودي.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="section-label">ماذا نقدم</div>
+    <h2 class="section-title">خدماتنا</h2>
+    <p class="section-body">
+      قدرات متكاملة مصممة للعلامات التجارية العالمية التي تسعى لحضور جاد وطويل الأمد 
+      في السوق السعودي.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>توزيع العلامات التجارية</h3>
+        <p>
+          توزيع حصري وانتقائي لأنظمة التجميل الاحترافية الفاخرة 
+          على الصالونات واستوديوهات الأظافر وأكاديميات الجمال في أنحاء المملكة.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>التراخيص والاستيراد</h3>
+        <p>
+          إدارة كاملة لإشعارات الهيئة العامة للغذاء والدواء (SFDA eCosma)، 
+          والتخليص الجمركي، والالتزام بالبطاقات العربية، وجميع المتطلبات النظامية لمنتجات التجميل.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>التعليم والتدريب</h3>
+        <p>
+          تدريب فني على المنتجات، وبرامج مدربين معتمدين، ودعم مستمر 
+          يهدف لبناء ولاء حقيقي بين المختصين المحترفين.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>تفعيل السوق</h3>
+        <p>
+          تسويق محلي، وحملات رقمية، وفعاليات صالونات، وبرامج سفراء العلامة 
+          مصممة خصيصاً لمجتمع التجميل الاحترافي في السعودية.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <div class="approach">
+    <div class="approach-inner">
+      <div class="section-label">نهجنا</div>
+      <h2 class="section-title">كيف نعمل مع الشركاء</h2>
+      <p class="section-body">
+        نعمل كامتداد للعلامات التي نمثلها — نحمي هويتها ونسرّع نموها 
+        في أحد أكثر أسواق التجميل ديناميكية في العالم.
+      </p>
+      <ul class="approach-list">
+        <li>
+          <span class="dot"></span>
+          <span>شراكات انتقائية — نمثل فقط المنتجات التي نؤمن بها ونستطيع دعمها بالشكل الصحيح.</span>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <span>نمو قائم على التعليم — المختص الذي يفهم النظام يصبح أقوى سفراء للعلامة.</span>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <span>بنية تحتية محلية كاملة — المخزون، والخدمات اللوجستية، والامتثال، والدعم بعد البيع تُدار من طرفنا بالكامل.</span>
+        </li>
+        <li>
+          <span class="dot"></span>
+          <span>تقارير شفافة وتوافق طويل الأمد مع معايير أصحاب العلامات العالمية.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="section-label">تواصل</div>
+    <h2 class="section-title">لنبنِ شيئاً يدوم</h2>
+    <p class="section-body" style="margin: 0 auto;">
+      مهتم بالشراكة مع MIMO في السوق السعودي؟  
+      يسعدنا مناقشة كيف يمكننا دعم علامتكم التجارية.
+    </p>
+    <a href="mailto:Mimospa@outlook.com" class="contact-email">Mimospa@outlook.com</a>
+    <p class="contact-location" style="margin-top: 14px;">
+      <a href="tel:+966570614658">+966 57 061 4658</a>
+    </p>
+    <p class="contact-location">الرياض، المملكة العربية السعودية</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>MIMO <span>·</span> توزيع منتجات التجميل الاحترافية <span>·</span> الرياض</p>
+  </footer>
+
+</body>
+</html>
